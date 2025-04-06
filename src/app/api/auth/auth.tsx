@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 const API_BASE_URL = "http://localhost:3000";
 
 export const registerUser = async (
@@ -14,13 +14,13 @@ export const registerUser = async (
 
 export const loginUser = async (
   payload: LoginPayload
-): Promise<ApiResponse> => {
+): Promise<AxiosResponse<any, any>> => {
   const response = await axios.post(`${API_BASE_URL}/auth/login`, payload, {
     headers: {
       "Content-Type": "application/json",
     },
   });
-  return response.data;
+  return response;
 };
 
 export const verifyUser = async (payload: VerifyPayload) => {
