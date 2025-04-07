@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 
 interface TopBarProps {
@@ -28,7 +29,7 @@ export default function TopBar({ selectedTab, setSelectedTab }: TopBarProps) {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full pl-10 pr-4 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-black"
+              className="w-full pl-10 pr-10 py-2 rounded-2xl border border-gray-300 focus:outline-none focus:ring-black"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 h-4 w-4" />
           </div>
@@ -56,6 +57,15 @@ export default function TopBar({ selectedTab, setSelectedTab }: TopBarProps) {
               {tab}
             </button>
           ))}
+          <div>
+            <Button
+              className="w-full bg-blue-600 text-white text-1xl hover:bg-blue-700"
+              size={"lg"}
+            >
+              {" "}
+              + Create Blog
+            </Button>
+          </div>
         </div>
       </div>
     </div>
